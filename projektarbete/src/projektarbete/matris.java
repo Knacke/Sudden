@@ -11,10 +11,11 @@ public class matris {
 		matris myMatrix = new matris();
 		myMatrix.addEntry(0, 1, 2);
 		System.out.println("hello");	
-		System.out.println(myMatrix.rcCheck(1,2,2));
+		System.out.println(myMatrix.regionCheck(1,2,2));
+		myMatrix.addEntry(0,3,2);
 		System.out.println(myMatrix.regionCheck(0,3,2));
 		myMatrix.addEntry(8, 8, 4);
-		System.out.println(myMatrix.regionCheck(7,8,4));
+		System.out.println(myMatrix.regionCheck(8,8,4));
 		myMatrix.print();
 	}
 	
@@ -35,7 +36,8 @@ public class matris {
 		}
 		return true; 
 		}
-		//Kollar 3*3 boxar. 
+	
+	
 	public void print() {
 		for(int k = 0; k<9;k++) {
 			for(int i = 0; i<9;i++) {
@@ -45,6 +47,7 @@ public class matris {
 		}
 	}
 	
+	// kollar 3x3 boxar 
 	public boolean regionCheck(int row, int column, int value) {
 	//box högst upp til vänster.
 		if(row<3&& column<3) {
@@ -81,7 +84,7 @@ public class matris {
 		//mitthöjd vänster
 		if((row>=3&&row<6)&& column<3) {
 			for(int k = 0; k<3;k++) {
-				for(int i = 0; i<3;i++) {
+				for(int i = 3; i<6;i++) {
 					if(value==numbers[i][k]) {
 						return false; 
 						}
@@ -91,7 +94,7 @@ public class matris {
 		//mitthöjd mitt.
 		if((row>=3&&row<6)&&(column>=3&&column<6)) {
 			for(int k = 3; k<6;k++) {
-				for(int i = 0; i<3;i++) {
+				for(int i = 3; i<6;i++) {
 					if(value==numbers[i][k]) {
 						return false; 
 						}
@@ -101,7 +104,7 @@ public class matris {
 		//mitthöjd höger.
 		if((row>=3&&row<6)&&(column>6)) {
 			for(int k = 3; k<6;k++) {
-				for(int i = 0; i<3;i++) {
+				for(int i = 3; i<6;i++) {
 					if(value==numbers[i][k]) {
 						return false; 
 						}
@@ -113,7 +116,7 @@ public class matris {
 		//längst ner vänster
 			if((row>=6&&row<9)&& column<3) {
 				for(int k = 0; k<3;k++) {
-					for(int i = 0; i<3;i++) {
+					for(int i = 6; i<9;i++) {
 						if(value==numbers[i][k]) {
 							return false; 
 							}
@@ -123,7 +126,7 @@ public class matris {
 			//längst ner  mitt.
 			if((row>=6&&row<9)&&(column>=3&&column<6)) {
 				for(int k = 3; k<6;k++) {
-					for(int i = 0; i<3;i++) {
+					for(int i = 6; i<9;i++) {
 						if(value==numbers[i][k]) {
 							return false; 
 							}
@@ -131,9 +134,9 @@ public class matris {
 					}
 				}
 			//längst ner  höger.
-			if((row>=6&&row<9)&&(column>6)) {
-				for(int k = 3; k<6;k++) {
-					for(int i = 0; i<3;i++) {
+			if((row>=6)&&(column>=6)) {
+				for(int k = 6; k<9;k++) {
+					for(int i = 6; i<9;i++) {
 						if(value==numbers[i][k]) {
 							return false; 
 							}
