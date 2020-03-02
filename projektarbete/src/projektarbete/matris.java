@@ -10,17 +10,30 @@ public class matris {
 	public static void main(String[] args) {
 		matris myMatrix = new matris();
 		myMatrix.addEntry(0, 1, 2);
+		myMatrix.addEntry(0, 1, 3);
+		myMatrix.addEntry(4, 4, 9);
 		System.out.println("hello");	
 		System.out.println(myMatrix.regionCheck(1,2,2));
 		myMatrix.addEntry(0,3,2);
 		System.out.println(myMatrix.regionCheck(0,3,2));
 		myMatrix.addEntry(8, 8, 4);
 		System.out.println(myMatrix.regionCheck(8,8,4));
-		myMatrix.print();
+		System.out.println(myMatrix.regionCheck(4,5,9));
+
+
 	}
 	
 	public void addEntry(int row, int column, int value) {
 		numbers[row][column] = value;
+	}
+	
+	public void clear() { // clears the board
+		for(int i = 0; i<9; i++) {
+			for(int k = 0; k<9; k++) {
+				numbers[k][i] = 0; 
+				
+			}
+		}
 	}
 	public boolean rcCheck(int row, int column, int value) {//returns false if unallowed
 		//kollar om finns på raden
