@@ -45,28 +45,16 @@ public class SudokuApp {
 
 		// boolean res = matrixSolver.newSolver(matrix,0,0);
 		// nyMatris.print();
-		matris matrix2 = new matris(); 
+	//	matris matrix2 = new matris(); 
 	   matrixSolver.simpleSolver(matrix);
-		matrix.print();
-		//System.out.println(matrix3);
+		//matrix.print();
 		
-		for( int i = 0; i<9; i++)
-			{
-			System.out.println(matrix.numbersSolved[i][0]); 
-			}
+	   	System.out.println("Här kommer attributet som vi sparade i matrixSolver:  ");
+		matrixSolver.solved.print(); 
+	
 		
 
-
-//		for (int j = 0; j < 9; j++) {
-//			for (int i = 0; i < 9; i++) {
-//
-//				System.out.print(resMatris[i][j] + " ");
-//			}
-//			System.out.println();
-//		}
-//
-//		System.out.println(resMatris); 
-
+		
 
 	}
 

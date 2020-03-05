@@ -2,14 +2,12 @@ package projektarbete;
 
 public class matris {
 	// en 9*9 matris som ska hålla koll på alla entries
-	public static int[][] numbers = new int[9][9];
+	public  int[][] numbers = new int[9][9];
 	public static int[][] numbersSolved = new int[9][9];
 
 	public matris() {
-
 	}
-
-
+	
 	public void allZeros() {
 		for (int i = 0; i < 9; i++) {
 			for (int k = 0; i < 9; i++) {
